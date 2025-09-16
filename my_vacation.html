@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Lucas Espaladori">
+    <title>My Dream Vacation</title>
+    
+    <!--makes all the images the same size-->
+    <style>
+        .slideshow-container {
+            /* make all images the same */
+            width: 800px; 
+            height: 500px;
+            position: relative;
+            margin: auto; /* center */
+            overflow: hidden;
+        }
+
+        .slideshow-image {
+            /* Make the images fill the container */
+            width: 100%;
+            height: 100%;
+            
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Dream Vacation</h1>
+    </header>
+
+    <main>
+        <h2>A Trip to Japan</h2>
+        <p>
+            My ideal vacation would be a trip to Japan. I've always been fascinated by Japanese culture, its ancient traditions, modern technological innovations, and unique cuisine.
+        </p>
+        
+        <!--image links-->
+        <div class="slideshow-container">
+            <img class="mySlides slideshow-image" src="https://web-japan.org/niponica/images/en/niponica32/1-1.jpg" alt="A photo of a temple in Japan">
+
+            <img class="mySlides slideshow-image" src="https://www.studymartialarts.org/blog/wp-content/uploads/2020/06/kyoto_japan-1-1078x516.jpg" alt="A photo of a village in Japan" style="display:none;">
+
+            <img class="mySlides slideshow-image" src="https://media.wired.com/photos/6740a4007e026291c332bbeb/3:2/w_2560%2Cc_limit/japan-travel-gear-505797368.jpg" alt="A photo of a city street in Japan" style="display:none;">
+
+            <img class="mySlides slideshow-image" src="https://photos.smugmug.com/Osaka/Osaka-Categories/i-zqxSZHf/0/L/Osaka_Restaurants-L.jpg" alt="A photo of Osaka" style="display:none;">
+
+            <img class="mySlides slideshow-image" src="https://blog.sakura.co/wp-content/uploads/2023/10/kyoto-temples-thumbnail-kinkakuji.png" alt="A photo of a temple in Kyoto" style="display:none;">
+
+            <img class="mySlides slideshow-image" src="https://skyticket.com/guide/wp-content/uploads/2019/10/pixta_58094912_M.jpg" alt="A photo of a city street in Japan" style="display:none;">
+        </div>
+
+        <p>I would love to explore cities like <strong>Tokyo</strong> for its bustling streets, <strong>kyoto</strong> for its beautiful temples and gardens, and <strong>Osaka</strong> for its unique cuisine. It would be a truly incredible experience.</p>
+
+    </main>
+
+    <hr>
+    <footer>
+        <!--link for the main page-->
+        <p><a href="index.html">Back to Home</a></p>
+    </footer>
+
+
+    <!--Java function to change the images-->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1} 
+            slides[slideIndex - 1].style.display = "block"; 
+            setTimeout(showSlides, 5000); 
+        }
+    </script>
+</body>
+</html>
