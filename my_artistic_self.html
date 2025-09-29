@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Lucas Espaladori">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Art</title>
+    <link rel="stylesheet" href="my_style.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,10 +83,22 @@
     </style>
 </head>
 <body>
-
+    <div class=”body_wrapper”>
     <div class="container">
         <div class="header">
+    <header>
             <h1>Discover me through art!</h1>
+    </header>
+        
+    <header>
+        <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home (About Me)</a></li>
+                    <li><a href="my_vacation.html">Dream Vacation</a></li>
+                    <li><a href="my_artistic_self.html" class="current-page">Personal Art</a></li>
+                </ul>
+            </nav>
+    </header>
         </div>
 
         <div class="image-container">
@@ -100,11 +113,14 @@
         <p class="description">
         This image represents a blend of analytical and creative thinking, as depicted by the mathematical equations alongside geometric shapes and artistic text. The keywords "Helpful," "Adaptive," and "Intriguing" are integrated, reflecting the desire to offer beneficial and flexible solutions that spark curiosity, all within a visually engaging context.
         </p>
+        </div>
+    </div>
+
+         <hr>
 
         <footer>
-            <p><a href="index.html">Back to Home</a></p>
-        </footer>
-    </div>
+            <P>This website is made for CS203 labs!</P>
+        </footer> 
 
 </body>
 </html>
