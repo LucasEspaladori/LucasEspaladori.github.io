@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="author" content="Lucas Espaladori">
     <title>About Me & My Interests</title>
+    <link rel="stylesheet" href="my_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 
 <body>
+    <div class=”body_wrapper”>
 
     <header>
         <h1>Welcome to My Website</h1>
+
+        <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="current-page">Home (About Me)</a></li>
+                    <li><a href="my_vacation.html">Dream Vacation</a></li>
+                    <li><a href="my_artistic_self.html">Personal Art</a></li>
+                </ul>
+            </nav>
     </header>
 
-    <main>
+    <div>
         <h2>About Lucas Espaladori</h2>
         <p>
             Hello! My name is Lucas Espaladori, and I'm a computer engineering student at the University of Ribeirão Preto(UNAERP). I am originally from Brazil.
@@ -23,7 +34,7 @@
         <hr>
 
         <h2>My Interests</h2>
-        <p>Here are some things I love:</p>
+        <p>Here are some things I love: <a href="https://github.com/LucasEspaladori/LucasEspaladori.github.io.git" target="_blank">My GitHub</a> </p>
         
         <ul>
             <li>Watching cooking &amp; comedy shows</li>
@@ -68,11 +79,15 @@
 
         <br>
 
-    </main>
+    </div>
 
+    
+ 
+    <hr>
+    
     <footer>
-        <p><a href="my_vacation.html">My dream vacation</a></p>
-        <p><a href="my_artistic_self.html">My personal art</a></p>
-    </footer>
+        <P>This website is made for CS203 labs!</P> 
+    </footer> 
+    
 </body>
 </html>

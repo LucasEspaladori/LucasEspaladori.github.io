@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="author" content="Lucas Espaladori">
     <title>My Dream Vacation</title>
+    <link rel="stylesheet" href="my_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!--makes all the images the same size-->
+    <div class=”body_wrapper”>
     <style>
         .slideshow-container {
             /* make all images the same */
@@ -30,6 +33,15 @@
 <body>
     <header>
         <h1>My Dream Vacation</h1>
+
+        <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home (About Me)</a></li>
+                    <li><a href="my_vacation.html" class="current-page">Dream vacation</a></li>
+                    <li><a href="my_artistic_self.html">Personal Art</a></li>
+                </ul>
+            </nav>
+    </header>
     </header>
 
     <main>
@@ -58,11 +70,6 @@
     </main>
 
     <hr>
-    <footer>
-        <!--link for the main page-->
-        <p><a href="index.html">Back to Home</a></p>
-    </footer>
-
 
     <!--Java function to change the images-->
     <script>
@@ -81,5 +88,11 @@
             setTimeout(showSlides, 5000); 
         }
     </script>
+
+    </div>
+    <footer>
+        <P>This website is made for CS203 labs!</P>
+    </footer>
 </body>
+
 </html>
