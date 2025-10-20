@@ -49,6 +49,13 @@ footer {
   background-color: #333;
   color: #fff;
   padding: 5px;
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+header {
+    background-color: #444;
+    color: white;
+    padding: 20px 0;
 }
 
 nav {
@@ -102,4 +109,95 @@ nav a.current-page {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(20, 20, 20); 
+}
+
+/* --- New Quiz Form Styles --- */
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.programmer-quiz-form fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.programmer-quiz-form legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.form-group.required label:after {
+    content: " *";
+    color: red;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+}
+
+.question-block {
+    background-color: #f9f9f9;
+    border-left: 5px solid #007bff;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.radio-options, .checkbox-options {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.radio-options label, .checkbox-options label {
+    font-weight: normal;
+    display: inline;
+}
+
+.form-group button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-group button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Range input styling */
+input[type="range"] {
+    width: 100%;
+    margin-top: 10px;
 }
