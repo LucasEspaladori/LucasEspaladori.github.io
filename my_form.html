@@ -23,7 +23,7 @@
         <main class="main-content">
             <p class="intro-text">Answer the questions below to find out your true programmer archetype. Don't worry, there's no right or wrong answer—just code!</p>
             
-            <form action="#" method="GET" class="programmer-quiz-form" onsubmit="return validate(event)">
+            <form action="#" method="GET" class="programmer-quiz-form" onsubmit="processQuiz(event)">
                 <fieldset>
                     <legend>The Programmer Archetype Quiz</legend>
 
@@ -90,9 +90,13 @@
                     <div class="form-group">
                         <button type="submit">Submit My Answers & Find My Archetype</button>
                     </div>
-
-</fieldset>
+                </fieldset>
             </form>
+
+            <div id="quiz-result" class="result-area hidden">
+                <h2>Your Programmer Archetype</h2>
+                <p id="result-text"></p>
+            </div>
 
         </main>
 

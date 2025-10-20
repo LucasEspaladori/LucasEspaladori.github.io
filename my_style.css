@@ -49,7 +49,7 @@ footer {
   background-color: #333;
   color: #fff;
   padding: 5px;
-  margin-top: auto; /* Pushes the footer to the bottom */
+  margin-top: auto;
 }
 
 header {
@@ -159,7 +159,7 @@ nav a.current-page {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+    box-sizing: border-box;
 }
 
 .question-block {
@@ -196,8 +196,37 @@ nav a.current-page {
     background-color: #218838;
 }
 
-/* Range input styling */
 input[type="range"] {
     width: 100%;
     margin-top: 10px;
+}
+
+/* --- New Quiz Form Styles --- */
+.main-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.result-area {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    background-color: #e9f5ff;
+    text-align: center;
+}
+
+.result-area h2 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+.result-area strong {
+    color: #cc0000;
+}
+
+.hidden {
+    display: none;
 }
