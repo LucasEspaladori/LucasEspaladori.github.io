@@ -14,7 +14,6 @@ function processQuiz(event) {
     const userName = document.getElementById('user_name').value.trim();
     const userEmail = document.getElementById('user_email').value.trim();
     
-    // --- 1. Validation Checks ---
     if (userName === "") {
         alert("🚨 Please enter your name before finding your archetype.");
         return false;
@@ -39,19 +38,9 @@ function processQuiz(event) {
         return false;
     }
 
-    // --- 2. Scoring Logic ---
     const totalScore = q1Score + q4Score; 
     let archetype = "";
     let description = "";
-
-    /*
-    Scoring Breakdown (Q1 Max 5, Q4 Max 5. Total Max Score: 10)
-    
-    Thresholds:
-    - 9-10 Points (High Score): Systems Architect
-    - 5-8 Points (Mid Score): Feature Fixer
-    - 2-4 Points (Low Score): Stack Explorer
-    */
 
     if (totalScore >= 9) {
         archetype = "Systems Architect 🏗️";
@@ -64,13 +53,13 @@ function processQuiz(event) {
         description = `With a score of ${totalScore} points, you are the **Stack Explorer**! Your first move is to consult external resources (Q1: 1 point) and you might lean toward familiar or elegant tools (Q4: Python Snake). You are resourceful and know how to leverage the community!`;
     }
 
-    // --- 3. Display Result ---
     const resultDiv = document.getElementById('quiz-result');
     document.getElementById('result-text').innerHTML = `
         <p>Your total score from the key questions is: <strong>${totalScore} points</strong>.</p>
         <h3>${archetype}</h3>
         <p>${description}</p>
     `;
+    
     resultDiv.classList.remove('hidden');
     resultDiv.scrollIntoView({ behavior: 'smooth' });
 
