@@ -6,19 +6,17 @@
     <title>My shop</title>
     <link rel="stylesheet" href="my_style.css"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="nav.js"></script>
+
 </head>
 <body>
     <h1>My Online Marketplace</h1>
 
-    <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home (About Me)</a></li>
-                    <li><a href="my_vacation.html" >Dream vacation</a></li>
-                    <li><a href="my_artistic_self.html">Personal Art</a></li>
-                    <li><a href="marketplace.html" class="current-page">My shop</a></li>
-                    <li><a href="my_calculator.html">Calculators</a></li>
-                </ul>
-            </nav>
+    <nav id="main-nav"></nav> 
+        <script> 
+             const current_path = location.pathname;
+            setNav(current_path);
+        </script>
     
     <script src="1-marketplace.js"></script>
 
