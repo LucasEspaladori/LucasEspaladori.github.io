@@ -201,36 +201,6 @@ input[type="range"] {
     margin-top: 10px;
 }
 
-/* --- New Quiz Form Styles --- */
-.main-content {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.result-area {
-    margin-top: 30px;
-    padding: 20px;
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    background-color: #e9f5ff;
-    text-align: center;
-}
-
-.result-area h2 {
-    color: #007bff;
-    margin-top: 0;
-}
-
-.result-area strong {
-    color: #cc0000;
-}
-
-.hidden {
-    display: none;
-}
-
 
 /* --- New Slide Show Styles --- */
 .slideshow {
@@ -397,4 +367,97 @@ header {
     background-color: #444;
     color: white;
     padding: 0; 
+}
+
+/* --- Dropdown Menu Styles for "Discover me!" (Revisited) --- */
+
+nav ul {
+    display: flex; 
+}
+
+.dropdown {
+    position: relative;
+    display: block;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: lightblue;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #444; 
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.icon {
+    display: none;
+}
+
+/* --- Responsive Hamburger Menu Styles --- */
+
+@media screen and (max-width: 768px) {
+    
+    .main-nav-list:not(.responsive) {
+        display: none; 
+    }
+
+    nav .icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: white;
+        padding: 1rem 1rem;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .main-nav-list.responsive {
+        position: relative;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .main-nav-list.responsive li {
+        float: none;
+        display: block;
+        text-align: left;
+        margin: 0;
+        border-top: 1px solid #444;
+    }
+
+    .main-nav-list.responsive .dropdown {
+        position: static;
+        display: block;
+        width: 100%;
+    }
+
+    .main-nav-list.responsive .dropdown-content {
+        position: static;
+        display: block;
+        width: 100%;
+        background-color: #222;
+        box-shadow: none;
+        border-top: 1px solid #444;
+    }
 }
