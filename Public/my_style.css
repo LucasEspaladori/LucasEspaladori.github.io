@@ -83,7 +83,7 @@ nav a {
 }
 
 nav a:hover {
-    color: darkblue;
+    color: rgb(255, 255, 255);
     border-radius: 5px;
 }
 
@@ -361,4 +361,40 @@ input[type="range"] {
 
 .add-item-form button:hover {
     background-color: #0056b3;
+}
+
+/* --- Title Image/Icon Styles --- */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.header-icon-link {
+    text-decoration: none;
+    line-height: 0;
+}
+
+.header-icon-link:hover {
+    text-decoration: none;
+}
+
+.title-container h1 {
+    text-align: left;
+    color: white; 
+    margin: 0; 
+}
+
+.header-icon {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+    display: block;
+}
+
+header {
+    background-color: #444;
+    color: white;
+    padding: 0; 
 }

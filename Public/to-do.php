@@ -6,20 +6,25 @@
     <title>My To-Do List</title>
     <link rel="stylesheet" href="my_style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="nav.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
     <div class="body_wrapper"> 
         <header>
-            <h1>My Personal To-Do List</h1>
-            <nav id="main-nav"></nav> 
-            <script> 
-                const current_path = location.pathname;
-                setNav(current_path);
-            </script>
-        </header>
+            <div class="title-container">
+
+                <a href="index.php" class="header-icon-link">
+                 <img src="https://cdn-icons-png.flaticon.com/512/5339/5339181.png" alt="Website Icon" class="header-icon">
+                </a>
+
+        <h1>My to-do list</h1>
+
+        </div>
+
+    <?php require_once 'nav.php'; ?>
+
+</header>
 
         <div class="main-content">
             <h2>What do you need to do?</h2>
@@ -36,9 +41,7 @@
 
         <hr>
         
-        <footer>
-            <P>This website is made for CS203 labs!</P> 
-        </footer> 
+        <?php require_once 'footer.php'; ?>
     </div>
 
     <script>

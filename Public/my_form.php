@@ -6,20 +6,25 @@
     <title>Programmer Personality Quiz</title>
     <link rel="stylesheet" href="my_style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="nav.js"></script>
     <script src="quiz.js"></script> </head>
 
 <body>
     <div class="body_wrapper">
 
         <header>
-            <h1>Discover Your Inner Programmer Personality!</h1>
-            <nav id="main-nav"></nav>
-                <script> 
-                    const current_path = location.pathname;
-                    setNav(current_path);
-                </script>
-        </header>
+            <div class="title-container">
+
+                <a href="index.php" class="header-icon-link">
+                 <img src="https://cdn-icons-png.flaticon.com/512/5339/5339181.png" alt="Website Icon" class="header-icon">
+                </a>
+
+        <h1>Quiz</h1>
+
+        </div>
+
+    <?php require_once 'nav.php'; ?>
+
+</header>
 
         <main class="main-content">
             <p class="intro-text">Answer the questions below to find out your true programmer archetype. Don't worry, there's no right or wrong answer—just code!</p>
@@ -99,9 +104,7 @@
 
         <hr>
 
-        <footer>
-            <P>This website is made for CS203 labs!</P>
-        </footer>
+        <?php require_once 'footer.php'; ?>
 
     </div>
 </body>
