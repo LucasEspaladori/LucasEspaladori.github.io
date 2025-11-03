@@ -30,7 +30,7 @@
         </p>
 
         <hr>
-<!--
+        
         <h2>My Interests Slideshow</h2>
 
         <div class="slideshow">
@@ -52,7 +52,6 @@
 
         </div>
         <hr>
--->
 
         <h2>My Interests</h2>
         <p>Here are some things I love: <a href="https://github.com/LucasEspaladori/LucasEspaladori.github.io.git" target="_blank">My GitHub</a> </p>
@@ -110,7 +109,7 @@
         <P>This website is made for CS203 labs!</P> 
     </footer> 
    
-    <!--
+
     <script>
         let current_slide = 0; 
         
@@ -143,6 +142,6 @@
             showSlide(current_slide);
         }
     </script>
--->
+
     </body>
 </html>

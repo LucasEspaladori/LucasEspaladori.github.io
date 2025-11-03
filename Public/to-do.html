@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Lucas Espaladori">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="my_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="nav.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="body_wrapper"> 
+        <header>
+            <h1>My Personal To-Do List</h1>
+            <nav id="main-nav"></nav> 
+            <script> 
+                const current_path = location.pathname;
+                setNav(current_path);
+            </script>
+        </header>
+
+        <div class="main-content">
+            <h2>What do you need to do?</h2>
+            
+            <form id="add_item_form" class="add-item-form" onsubmit="event.preventDefault(); addItem();">
+                <input type="text" id="todo_input" placeholder="Enter a new task..." required>
+                <button type="submit">Add to list</button>
+            </form>
+
+            <ul id="todo_list">
+                </ul>
+
+        </div>
+
+        <hr>
+        
+        <footer>
+            <P>This website is made for CS203 labs!</P> 
+        </footer> 
+    </div>
+
+    <script>
+        let items = JSON.parse(localStorage.getItem("items")) || [];
+        renderList();
+        function renderList(){
+            items.forEach((item) => {
+                renderItem(item.text, item.id);
+            });
+        }
+        function addItem() {
+            const input_element = document.getElementById("todo_input");
+            const item_text = input_element.value.trim();
+
+            if (item_text === "") {
+                alert("Please enter a task before adding it to the list!");
+                return;
+            }
+            const newItem = {
+                text: item_text,
+                id: Date.now()
+            };
+            
+            items.push(newItem);
+            localStorage.setItem("items", JSON.stringify(items));
+            renderItem(newItem.text, newItem.id);
+            input_element.value = "";
+        }
+
+        function renderItem(item_text, id) {
+            const ul_element = document.getElementById("todo_list");
+            const li = document.createElement("li");
+            li.dataset.id = id;
+            const text_span = document.createElement("span");
+            text_span.textContent = item_text;
+            li.appendChild(text_span);
+            const trash_span = document.createElement("span");
+            trash_span.classList.add('fas', 'fa-trash');
+            li.appendChild(trash_span);
+            trash_span.addEventListener("click", () => {
+                const item_id_to_delete = parseInt(li.dataset.id);
+                li.remove();
+                items = items.filter(x => x.id !== item_id_to_delete);
+                localStorage.setItem("items", JSON.stringify(items)); 
+            });
+            ul_element.appendChild(li);
+        }
+    </script>
+</body>
+</html>
