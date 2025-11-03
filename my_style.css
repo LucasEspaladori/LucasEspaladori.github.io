@@ -292,3 +292,73 @@ input[type="range"] {
         font-size: 16px;
     }
 }
+
+/* --- New To-Do List Styles --- */
+#todo_list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#todo_list li {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#todo_list li:hover {
+    background-color: #f1f1f1;
+}
+
+#todo_list li span:first-child {
+    flex-grow: 1;
+    color: #333;
+    word-break: break-word;
+}
+
+.fa-trash {
+    color: #cc0000;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 5px;
+    transition: color 0.2s ease;
+}
+
+.fa-trash:hover {
+    color: #ff3333;
+}
+
+.add-item-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-item-form input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.add-item-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.add-item-form button:hover {
+    background-color: #0056b3;
+}
