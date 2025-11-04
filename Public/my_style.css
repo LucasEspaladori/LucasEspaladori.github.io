@@ -253,7 +253,7 @@ input[type="range"] {
     border-radius: 3px 0 0 3px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .slideshow {
         max-width: 90%;
     }
@@ -414,7 +414,7 @@ nav ul {
 
 /* --- Responsive Hamburger Menu Styles --- */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width:800px) {
     
     .main-nav-list:not(.responsive) {
         display: none; 
