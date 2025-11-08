@@ -6,7 +6,7 @@
     <title>Programmer Personality Quiz</title>
     <link rel="stylesheet" href="my_style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="quiz.js"></script> </head>
+    <script src="my_form.js"></script> </head>
 
 <body>
     <div class="body_wrapper">
@@ -29,7 +29,7 @@
         <main class="main-content">
             <p class="intro-text">Answer the questions below to find out your true programmer archetype. Don't worry, there's no right or wrong answer—just code!</p>
             
-            <form action="#" method="GET" class="programmer-quiz-form" onsubmit="return validate(event)">
+            <form action="quiz_verification.php" method="GET" class="programmer-quiz-form" onsubmit="return validate(event)">
                 <fieldset>
                     <legend>The Programmer Archetype Quiz</legend>
 
@@ -62,13 +62,13 @@
                     <div class="form-group question-block">
                         <label><strong>2. Which tools are open right now (select all that apply):</strong></label>
                         <div class="checkbox-options">
-                            <input type="checkbox" id="q2_a" name="question2" value="music">
+                            <input type="checkbox" id="q2_a" name="question2[]" value="music">
                             <label for="q2_a">Music/Podcast (Need background noise)</label><br>
                             
-                            <input type="checkbox" id="q2_b" name="question2" value="social">
+                            <input type="checkbox" id="q2_b" name="question2[]" value="social">
                             <label for="q2_b">Social Media (Just checking *one* thing)</label><br>
                             
-                            <input type="checkbox" id="q2_c" name="question2" value="docs">
+                            <input type="checkbox" id="q2_c" name="question2[]" value="docs">
                             <label for="q2_c">Official Language Docs (RTFM is life)</label>
                         </div>
                     </div>

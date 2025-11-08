@@ -1,3 +1,23 @@
+<?php
+session_start(); // <-- NEW: Must be the very first thing in the file
+
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+
+    $BASE_PATH = ''; 
+    if ($_SERVER['SERVER_NAME'] === 'localhost') {
+        $BASE_PATH = '/LucasEspaladori.github.io/Public/'; 
+    } else if ($_SERVER['SERVER_NAME'] === 'osiris.ubishops.ca'){
+        $BASE_PATH = '/username/'; 
+    } else {
+        $BASE_PATH = '/';
+    }
+
+    $login_url = 'http://' . $_SERVER['HTTP_HOST'] . $BASE_PATH . 'login.php';
+
+    header('Location: ' . $login_url);
+    exit(); // Stop execution to prevent the rest of the page from loading
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

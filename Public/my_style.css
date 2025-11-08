@@ -461,3 +461,96 @@ nav ul {
         border-top: 1px solid #444;
     }
 }
+
+/* --- New Quiz Results Page Styles --- */
+
+.result-highlight-block {
+    display: flex;
+    align-items: center;
+    background-color: #e6f7ff;
+    border: 2px solid #007bff;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+.result-icon {
+    font-size: 4em;
+    margin-right: 20px;
+    line-height: 1;
+}
+
+.result-text h4 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.8em;
+}
+
+.result-text p {
+    margin-bottom: 0;
+}
+
+.archetype-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.archetype-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fefefe;
+    position: relative;
+    overflow: hidden;
+}
+
+.archetype-card.highlighted {
+    border: 4px solid #ffc107; /* Highlight border */
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+    transform: scale(1.05);
+    background-color: #fffde7; /* Subtle background change for highlight */
+}
+
+.card-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.card-title {
+    color: #333;
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+.card-description {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.you-are-here {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    transform: rotate(45deg) translate(25%, -25%);
+    transform-origin: 100% 0%;
+    width: 150%;
+    text-align: center;
+}
+
+/* Color codes from the image (SHY/COOL/SMART/CHILL) */
+.archetype-card .shy { color: #8bc34a; } /* Green-ish */
+.archetype-card .cool { color: #e91e63; } /* Pink-ish */
+.archetype-card .smart { color: #03a9f4; } /* Blue-ish */
+.archetype-card .chill { color: #ff9800; } /* Orange-ish */
+
+/* ... (Existing my_style.css content remains) ... */
