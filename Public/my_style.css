@@ -509,10 +509,10 @@ nav ul {
 }
 
 .archetype-card.highlighted {
-    border: 4px solid #ffc107; /* Highlight border */
+    border: 4px solid #ffc107;
     box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
     transform: scale(1.05);
-    background-color: #fffde7; /* Subtle background change for highlight */
+    background-color: #fffde7;
 }
 
 .card-icon {
@@ -547,10 +547,18 @@ nav ul {
     text-align: center;
 }
 
-/* Color codes from the image (SHY/COOL/SMART/CHILL) */
-.archetype-card .shy { color: #8bc34a; } /* Green-ish */
-.archetype-card .cool { color: #e91e63; } /* Pink-ish */
-.archetype-card .smart { color: #03a9f4; } /* Blue-ish */
-.archetype-card .chill { color: #ff9800; } /* Orange-ish */
+.archetype-card .shy { color: #8bc34a; }
+.archetype-card .cool { color: #e91e63; }
+.archetype-card .smart { color: #03a9f4; }
+.archetype-card .chill { color: #ff9800; }
 
-/* ... (Existing my_style.css content remains) ... */
+/* --- New To-Do List Welcome Message Style --- */
+.welcome-message {
+    color: #007bff; 
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #f1f1f1;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}

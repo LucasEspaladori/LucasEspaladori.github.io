@@ -4,9 +4,6 @@ function redirectToFormWithError($message) {
     exit();
 }
 
-// 1. Receive and Verify GET Data
-
-// Check required fields (Name, Email, Question 1, Question 4)
 if (empty($_GET['user_name']) || empty($_GET['user_email']) || empty($_GET['question1']) || empty($_GET['question4'])) {
     redirectToFormWithError("Missing required fields (Name, Email, Question 1, or Question 4).");
 }
@@ -14,11 +11,11 @@ if (empty($_GET['user_name']) || empty($_GET['user_email']) || empty($_GET['ques
 $userName = htmlspecialchars($_GET['user_name']);
 $userEmail = htmlspecialchars($_GET['user_email']);
 $q1Score = intval($_GET['question1']); // 1, 3, or 5
-$q3Number = isset($_GET['question3']) ? intval($_GET['question3']) : 0; // 0 to 100
+$q3Number = isset($_GET['question3']) ? intval($_GET['question3']) : 0;
 $q4Score = intval($_GET['question4']); // 1, 3, or 5
-$q5Score = isset($_GET['question5']) ? intval($_GET['question5']) : 5; // 1 to 10, default 5
+$q5Score = isset($_GET['question5']) ? intval($_GET['question5']) : 5; 
 
-// Question 2 (Checkboxes - assign points based on 'docs' selected)
+
 $q2Points = 0;
 if (isset($_GET['question2']) && is_array($_GET['question2']) && in_array('docs', $_GET['question2'])) {
     $q2Points = 5;
@@ -26,14 +23,11 @@ if (isset($_GET['question2']) && is_array($_GET['question2']) && in_array('docs'
     $q2Points = 1;
 }
 
-// 2. Compute the final score of the quiz
-// Maximum possible score: Q1(5) + Q2(5) + Q3(10) + Q4(5) + Q5(10) = 35 points
-// Q3: Max 10 points for high usage (e.g., 100 uses -> 10 points)
 $q3Points = min(10, floor($q3Number / 10)); 
 
 $totalScore = $q1Score + $q2Points + $q3Points + $q4Score + $q5Score;
 
-// Determine Archetype based on score (Scale: 1+1+0+1+1 = 4 to 5+5+10+5+10 = 35)
+
 $archetype = [
     'title' => 'The Debugger',
     'emoji' => '🧐',
