@@ -141,16 +141,8 @@
             showSlide(current_slide);
         }
 
-        /* --- New Hamburger Menu JS --- */
-        function myFunction() {
-            var x = document.getElementById("nav_ul");
-                if (x.className === "main-nav-list") {
-                 x.className += " responsive";
-                } else {
-                 x.className = "main-nav-list";
-                }   
-        }
     </script>
+
 
     </body>
 </html>

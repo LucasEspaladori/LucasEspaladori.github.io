@@ -1,11 +1,9 @@
 <?php
-  // 1. Start session, necessary for checking $_SESSION['authenticated']
   if (session_status() == PHP_SESSION_NONE) {
     session_start();
   }
   
   $current_page = basename($_SERVER['PHP_SELF']);
-  // Variable to check authentication state
   $is_authenticated = isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true;
 ?>
 
@@ -32,12 +30,19 @@
         </a></li>
 
         <?php if ($is_authenticated): ?>
-        <li><a 
-            href="logout.php" 
-            class="<?php echo ($current_page === 'logout.php') ? 'current_page' : ''; ?>">
-            Logout
-        </a></li>
+
         <?php endif; ?>
 
     </ul>
+    
+    <script>
+        function myFunction() {
+            var x = document.getElementById("nav_ul");
+            if (x.className === "main-nav-list") {
+                x.className += " responsive";
+            } else {
+                x.className = "main-nav-list";
+            }   
+        }
+    </script>
 </nav>
