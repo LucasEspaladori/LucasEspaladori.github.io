@@ -25,5 +25,6 @@ function validate(event) {
         return false;
     }
 
+    // Allow submission to continue to quiz_verification.php
     return true; 
 }

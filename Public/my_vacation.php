@@ -6,7 +6,6 @@
     <title>My Dream Vacation</title>
     <link rel="stylesheet" href="my_style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="nav.js"></script>
     
     <!--makes all the images the same size-->
     <div class=”body_wrapper”>
@@ -33,15 +32,19 @@
 </head>
 <body>
     <header>
-        <h1>My Dream Vacation</h1>
+            <div class="title-container">
 
-    <nav id="main-nav"></nav> 
-        <script> 
-             const current_path = location.pathname;
-            setNav(current_path);
-        </script>
+                <a href="index.php" class="header-icon-link">
+                 <img src="https://cdn-icons-png.flaticon.com/512/5339/5339181.png" alt="Website Icon" class="header-icon">
+                </a>
 
-    </header>
+        <h1>Dream Vecation</h1>
+
+        </div>
+
+    <?php require_once 'nav.php'; ?>
+
+</header>
 
     <main>
         <h2>A Trip to Japan</h2>
@@ -89,9 +92,7 @@
     </script>
 
     </div>
-    <footer>
-        <P>This website is made for CS203 labs!</P>
-    </footer>
+    <?php require_once 'footer.php'; ?>
 </body>
 
 </html>

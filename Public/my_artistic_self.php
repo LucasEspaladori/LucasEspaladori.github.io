@@ -5,7 +5,6 @@
     <meta name="author" content="Lucas Espaladori">
     <title>My Personal Art</title>
     <link rel="stylesheet" href="my_style.css">
-    <script src="nav.js"></script>
 
     <style>
         body {
@@ -88,14 +87,19 @@
     <div class="container">
         <div class="header">
     <header>
-            <h1>Discover me through art!</h1>
-    </header>
+            <div class="title-container">
 
-    <nav id="main-nav"></nav> 
-        <script> 
-             const current_path = location.pathname;
-            setNav(current_path);
-        </script>
+                <a href="index.php" class="header-icon-link">
+                 <img src="https://cdn-icons-png.flaticon.com/512/5339/5339181.png" alt="Website Icon" class="header-icon">
+                </a>
+
+        <h1>My art style</h1>
+
+        </div>
+
+    <?php require_once 'nav.php'; ?>
+
+</header>
 
         </div>
 
@@ -116,9 +120,7 @@
 
          <hr>
 
-        <footer>
-            <P>This website is made for CS203 labs!</P>
-        </footer> 
+        <?php require_once 'footer.php'; ?>
 
 </body>
 </html>
