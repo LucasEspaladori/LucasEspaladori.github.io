@@ -1,29 +1,22 @@
 <?php
-session_start(); // <-- NEW: Must be the very first thing in the file
 
-if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+require_once 'config.php';
+session_start();
 
-    $BASE_PATH = ''; 
-    if ($_SERVER['SERVER_NAME'] === 'localhost') {
-        $BASE_PATH = '/LucasEspaladori.github.io/Public/'; 
-    } else if ($_SERVER['SERVER_NAME'] === 'osiris.ubishops.ca'){
-        $BASE_PATH = '/username/'; 
-    } else {
-        $BASE_PATH = '/';
-    }
+$is_authenticated = isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true;
 
-    $login_url = 'http://' . $_SERVER['HTTP_HOST'] . $BASE_PATH . 'login.php';
-
-    header('Location: ' . $login_url);
-    exit(); // Stop execution to prevent the rest of the page from loading
+$username_display = 'User';
+if ($is_authenticated && isset($_COOKIE['todo-username']) && !empty($_COOKIE['todo-username'])) {
+    $username_display = htmlspecialchars($_COOKIE['todo-username']);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Lucas Espaladori">
-    <title>My To-Do List</title>
+    <title><?php echo $username_display; ?>'s To-Do List</title>
     <link rel="stylesheet" href="my_style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -38,15 +31,27 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
                  <img src="https://cdn-icons-png.flaticon.com/512/5339/5339181.png" alt="Website Icon" class="header-icon">
                 </a>
 
-        <h1>My to-do list</h1>
+        <h1><?php echo $username_display; ?>'s to-do list</h1>
 
         </div>
 
     <?php require_once 'nav.php'; ?>
 
-</header>
+    <?php if ($is_authenticated): ?>
+        <form action="logout.php" method="post" style="position: absolute; right: 20px; top: 10px;">
+        <button type="submit" style="background-color: #d9534f; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 1em;">
+            Log out
+        </button>
+        </form>
+    <?php endif; ?>
 
-        <div class="main-content">
+</header>
+        
+    <div class="main-content">
+        
+        <?php if ($is_authenticated): ?>
+            <h2 class="welcome-message">Welcome back, **<?php echo $username_display; ?>**!</h2>
+            
             <h2>What do you need to do?</h2>
             
             <form id="add_item_form" class="add-item-form" onsubmit="event.preventDefault(); addItem();">
@@ -55,60 +60,70 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
             </form>
 
             <ul id="todo_list">
-                </ul>
+            </ul>
 
-        </div>
-
-        <hr>
+        <?php else: ?>
+            <h2 class="welcome-message">Please log in to access your To-Do List.</h2>
+            <p style="text-align: center; font-size: 1.2em;">
+                You can log in by clicking the **To-do List** link in the navigation menu.
+            </p>
+        <?php endif; ?>
         
-        <?php require_once 'footer.php'; ?>
     </div>
 
-    <script>
-        let items = JSON.parse(localStorage.getItem("items")) || [];
-        renderList();
-        function renderList(){
-            items.forEach((item) => {
-                renderItem(item.text, item.id);
-            });
-        }
-        function addItem() {
-            const input_element = document.getElementById("todo_input");
-            const item_text = input_element.value.trim();
+    <hr>
+    
+    <?php require_once 'footer.php'; ?>
+    </div>
 
-            if (item_text === "") {
-                alert("Please enter a task before adding it to the list!");
-                return;
+    <?php if ($is_authenticated): ?>
+        <script>
+            let items = JSON.parse(localStorage.getItem("items")) || [];
+            renderList();
+            function renderList(){
+                items.forEach((item) => {
+                    renderItem(item.text, item.id);
+                });
             }
-            const newItem = {
-                text: item_text,
-                id: Date.now()
-            };
-            
-            items.push(newItem);
-            localStorage.setItem("items", JSON.stringify(items));
-            renderItem(newItem.text, newItem.id);
-            input_element.value = "";
-        }
+            function addItem() {
+                const input_element = document.getElementById("todo_input");
+                const item_text = input_element.value.trim();
 
-        function renderItem(item_text, id) {
-            const ul_element = document.getElementById("todo_list");
-            const li = document.createElement("li");
-            li.dataset.id = id;
-            const text_span = document.createElement("span");
-            text_span.textContent = item_text;
-            li.appendChild(text_span);
-            const trash_span = document.createElement("span");
-            trash_span.classList.add('fas', 'fa-trash');
-            li.appendChild(trash_span);
-            trash_span.addEventListener("click", () => {
-                const item_id_to_delete = parseInt(li.dataset.id);
-                li.remove();
-                items = items.filter(x => x.id !== item_id_to_delete);
-                localStorage.setItem("items", JSON.stringify(items)); 
-            });
-            ul_element.appendChild(li);
-        }
-    </script>
+                if (item_text === "") {
+                    alert("Please enter a task before adding it to the list!");
+                    return;
+                }
+                const newItem = {
+                    text: item_text,
+                    id: Date.now()
+                };
+                
+                items.push(newItem);
+                localStorage.setItem("items", JSON.stringify(items));
+                renderItem(newItem.text, newItem.id);
+                input_element.value = "";
+            }
+
+            function renderItem(item_text, id) {
+                const ul_element = document.getElementById("todo_list");
+                const li = document.createElement("li");
+                li.dataset.id = id;
+                const text_span = document.createElement("span");
+                text_span.textContent = item_text;
+                li.appendChild(text_span);
+                const trash_span = document.createElement("span");
+                trash_span.classList.add('fas', 'fa-trash');
+                li.appendChild(trash_span);
+                trash_span.addEventListener("click", () => {
+                    const item_id_to_delete = parseInt(li.dataset.id);
+                    li.remove();
+                    items = items.filter(x => x.id !== item_id_to_delete);
+                    localStorage.setItem("items", JSON.stringify(items)); 
+                });
+                ul_element.appendChild(li);
+            }
+        </script>
+    <?php endif; ?>
+    
 </body>
 </html>

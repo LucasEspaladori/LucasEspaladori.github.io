@@ -1,0 +1,5 @@
+Options -Indexes
+
+<Files "login_attempts.json">
+Require all denied
+</Files>
