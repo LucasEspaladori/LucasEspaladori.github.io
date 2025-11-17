@@ -22,6 +22,7 @@
 
         <li><a href="marketplace.php" class="<?php echo ($current_page === 'marketplace.php') ? 'current_page' : ''; ?>">My shop</a></li>
         <li><a href="my_form.php" class="<?php echo ($current_page === 'my_form.php') ? 'current_page' : ''; ?>">Quiz</a></li>
+        <li><a href="blog.php" class="<?php echo ($current_page === 'blog.php') ? 'current_page' : ''; ?>">Blog</a></li>
         
         <li><a 
             href="login.php" 

@@ -562,3 +562,114 @@ nav ul {
     margin-bottom: 30px;
     font-size: 1.8em;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- New Blog Page Styles --- */
+.hero-blog {
+    background-color: #f0f8ff; /* Light, attractive background color [cite: 33] */
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-blog h2 {
+    color: #007bff;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.hero-blog p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Two-column layout for main posts and aside list [cite: 39] */
+.blog-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.blog-posts-main {
+    flex: 3; /* Takes up more space */
+    min-width: 0; /* Ensures proper shrinking */
+}
+
+.blog-aside-list {
+    flex: 1; /* Takes up less space, positioned on the right [cite: 39] */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    min-width: 200px;
+}
+
+.blog-aside-list h3 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 0;
+    color: #333;
+}
+
+.blog-aside-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.blog-aside-list li {
+    margin-bottom: 8px;
+    border-left: 3px solid transparent;
+    transition: border-left 0.2s;
+}
+
+.blog-aside-list li:hover {
+    border-left: 3px solid #007bff;
+}
+
+.blog-aside-list a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #333; /* Darken link color for better contrast in aside */
+}
+
+.blog-aside-list a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Individual Post Styling */
+.blog-post {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-post h4 {
+    color: #444;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #999;
+    text-align: right;
+}
+
+/* Responsive adjustment for the blog layout */
+@media screen and (max-width: 800px) {
+    .blog-layout {
+        flex-direction: column;
+    }
+    .blog-aside-list {
+        min-width: unset;
+    }
+}
