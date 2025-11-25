@@ -4,7 +4,10 @@
   }
   
   $current_page = basename($_SERVER['PHP_SELF']);
+  
   $is_authenticated = isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true;
+
+  $is_blog_authenticated = isset($_SESSION['blog_authenticated']) && $_SESSION['blog_authenticated'] === true;
 ?>
 
 <nav>
@@ -16,23 +19,30 @@
             <a href="javascript:void(0)" class="dropbtn">Discover me!</a>
             <div class="dropdown-content">
                 <a href="my_vacation.php" class="<?php echo ($current_page === 'my_vacation.php') ? 'current_page' : ''; ?>">Dream vacation</a>
-                <a href="my_artistic_self.php" class="<?php echo ($current_page === 'my_artistic_self.php') ? 'current_page' : ''; ?>">Personal Art</a>
+                <a href="my_artistic_self.php" class="<?php echo ($current_page === 'my_artistic_self') ? 'current_page' : ''; ?>">Personal Art</a>
             </div>
         </li>
 
         <li><a href="marketplace.php" class="<?php echo ($current_page === 'marketplace.php') ? 'current_page' : ''; ?>">My shop</a></li>
         <li><a href="my_form.php" class="<?php echo ($current_page === 'my_form.php') ? 'current_page' : ''; ?>">Quiz</a></li>
+        
         <li><a href="blog.php" class="<?php echo ($current_page === 'blog.php') ? 'current_page' : ''; ?>">Blog</a></li>
         
+        <?php if ($is_blog_authenticated): ?>
+            <li><a href="add_post.php" class="<?php echo ($current_page === 'add_post.php') ? 'current_page' : ''; ?>">Add Post</a></li>
+            <li><a href="logout_blog.php">Blog Logout</a></li>
+        <?php else: ?>
+            <li><a href="login_blog.php" class="<?php echo ($current_page === 'login_blog.php') ? 'current_page' : ''; ?>">Blog Login</a></li>
+        <?php endif; ?>
+
         <li><a 
             href="login.php" 
-            class="<?php echo ($current_page === 'login.php' || $current_page === 'todo-list.php') ? 'current_page' : ''; ?>">
+            class="<?php echo ($current_page === 'login.php' || $current_page === 'todo-list.php' || $current_page === 'logout.php') ? 'current_page' : ''; ?>">
             To-do List
         </a></li>
 
         <?php if ($is_authenticated): ?>
-
-        <?php endif; ?>
+            <?php endif; ?>
 
     </ul>
     

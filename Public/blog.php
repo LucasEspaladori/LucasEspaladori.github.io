@@ -80,11 +80,15 @@ if ($json_data === false) {
                         if (!empty($blog_posts)) {
                             // Loop through posts (array_reverse displays newest posts first, if the JSON is ordered oldest-to-newest)
                             foreach (array_reverse($blog_posts, true) as $post_id => $post_data) {
-                                // Mandatory Item 2: Use the key as the HTML ID for the hyperlink target
                                 echo '<article class="blog-post" id="' . $post_id . '">';
                                 
-                                // Placeholder for Mandatory 5: Delete Button
-                                // if ($is_authenticated) { /* ... delete button form code ... */ }
+                                // Mandatory Item 5: Delete Button
+                                if (isset($_SESSION['blog_authenticated']) && $_SESSION['blog_authenticated'] === true) { 
+                                    echo '<form action="delete_post.php" method="POST" class="delete-form" onsubmit="return confirm(\'Are you sure you want to delete the post: \\\''. htmlspecialchars($post_data['title'], ENT_QUOTES) . '\\\'?\');">';
+                                    echo '<input type="hidden" name="post_id" value="' . htmlspecialchars($post_id) . '">';
+                                    echo '<button type="submit" class="delete-btn">Delete Post</button>';
+                                    echo '</form>';
+                                }
                                 
                                 echo '<span class="post-meta">Posted on ' . htmlspecialchars($post_data['date']) . '</span>';
                                 echo '<h4>' . htmlspecialchars($post_data['title']) . '</h4>';
