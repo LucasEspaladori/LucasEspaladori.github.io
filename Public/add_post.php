@@ -64,13 +64,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add New Blog Post</title>
+    <meta name="author" content="Lucas Espaladori">
+    <title>Add new blog post</title>
     <link rel="stylesheet" href="my_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="body_wrapper"> 
         <header>
-            <h1>Add New Blog Post</h1>
+            <div class="title-container">
+                <a href="index.php" class="header-icon-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5339/5339181.png" alt="Website Icon" class="header-icon">
+                </a>
+                <h1>Add new blog post</h1>
+            </div>
             <?php require_once 'nav.php'; ?>
         </header>
 

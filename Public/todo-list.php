@@ -38,7 +38,7 @@ if ($is_authenticated && isset($_COOKIE['todo-username']) && !empty($_COOKIE['to
     <?php require_once 'nav.php'; ?>
 
     <?php if ($is_authenticated): ?>
-        <form action="logout.php" method="post" style="position: absolute; right: 20px; top: 10px;">
+        <form action="logout.php" method="post" style="right: 20px; top: 10px;">
         <button type="submit" style="background-color: #d9534f; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 1em;">
             Log out
         </button>

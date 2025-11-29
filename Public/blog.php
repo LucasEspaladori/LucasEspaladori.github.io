@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 // Assume $is_authenticated is set to false if not logged in (defined in nav.php)
-$is_authenticated = isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true; 
+$is_authenticated = isset($_SESSION['blog_authenticated']) && $_SESSION['blog_authenticated'] === true;
 
 // 🎯 FIX: Use __DIR__ to guarantee the script finds the file in the same directory.
 $json_file = __DIR__ . '/blog_posts.json'; 

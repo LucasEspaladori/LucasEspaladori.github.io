@@ -1,26 +1,29 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
+// Optional: include config if you use custom session save path
+// require_once __DIR__ . '/config.php';
+
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Check if already logged in
-if (isset($_SESSION['blog_authenticated']) && $_SESSION['blog_authenticated'] === true) {
+// If already logged in, go to blog
+if (!empty($_SESSION['blog_authenticated']) && $_SESSION['blog_authenticated'] === true) {
     header('Location: blog.php');
     exit;
 }
 
 $error_message = '';
-// The correct hash for 'CS203'
-$hashed_password = '$2y$10$w/X0B8g6P.1.M4wHqD2gIuD4T.z2vN.x.T.R1c0uE/5A5c0q.J2O'; 
+$hashed_password = '$2y$10$gF9.9HFqb.WOULXLQ6cd.O..oQxhb/w9EaycB4pALeXwtHdHsITSy';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $input_password = $_POST['password'] ?? '';
+    $input_password = trim($_POST['password'] ?? '');
 
-    // Verify the password
+
     if (password_verify($input_password, $hashed_password)) {
+        // Prevent session fixation and store login state
+        session_regenerate_id(true);
         $_SESSION['blog_authenticated'] = true;
-        
-        // Success: Redirect to the blog page
+
         header('Location: blog.php');
         exit;
     } else {
@@ -28,26 +31,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blog Login</title>
+    <meta name="author" content="Lucas Espaladori">
+    <title>Blog Admin Login</title>
     <link rel="stylesheet" href="my_style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="body_wrapper"> 
         <header>
-            <h1>Blog Admin Login</h1>
+            <div class="title-container">
+                <a href="index.php" class="header-icon-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5339/5339181.png" alt="Website Icon" class="header-icon">
+                </a>
+                <h1>Blog Admin Login</h1>
+            </div>
             <?php require_once 'nav.php'; ?>
         </header>
 
         <main class="main-content form-page">
             <section class="form-container">
                 <h2>Access Blog Management</h2>
-                
+
                 <?php if ($error_message): ?>
                     <p style="color: red; font-weight: bold;"><?php echo htmlspecialchars($error_message); ?></p>
                 <?php endif; ?>
@@ -62,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </section>
         </main>
 
-        <?php require_once 'footer.php'; ?>
+        <?php require_once __DIR__ . '/footer.php'; ?>
     </div>
 </body>
 </html>
