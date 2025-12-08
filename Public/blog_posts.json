@@ -1,0 +1,29 @@
+{
+    "post_1_ai_coding": {
+        "date": "October 15, 2025",
+        "title": "The Rise of AI in Everyday Coding",
+        "paragraphs": [
+            "Artificial intelligence is rapidly changing how we approach software development. From simple code completion tools (like GitHub Copilot) to advanced debugging assistance, AI is becoming an indispensable pair programmer. This shift in tooling allows developers to focus on higher-level architectural problems rather than tedious boilerplate.",
+            "It raises exciting questions about the future role of human developers and how we can best collaborate with these powerful tools. This technological shift is one of the most exciting areas in computer engineering today. We must learn to audit and verify AI-generated code to maintain quality and security.",
+            "This post explores the ethical considerations and productivity gains we are currently seeing in the industry, and what it means for students entering the field today."
+        ]
+    },
+    "post_2_cyber_security": {
+        "date": "November 5, 2025",
+        "title": "A Beginner's Guide to Home Cyber Security",
+        "paragraphs": [
+            "In our hyper-connected world, cyber security isn't just for corporations anymore\u2014it's essential for everyone. Simple steps like enabling two-factor authentication (2FA) on all your accounts and using a strong, unique password manager can drastically reduce your risk of a breach.",
+            "This post breaks down the most common threats, from sophisticated phishing scams that target personal information to malware hidden in seemingly legitimate downloads. We cover actionable, easy-to-implement steps you can take today to protect your digital life.",
+            "Protecting your digital footprint is just as important as securing your physical home. A little effort now saves a huge headache later."
+        ]
+    },
+    "post_3_php_basics": {
+        "date": "November 16, 2025",
+        "title": "Mastering PHP Basics: The Power of Server-Side Scripting",
+        "paragraphs": [
+            "PHP remains a vital language for web development, powering millions of websites worldwide, including major platforms like WordPress. Understanding how to handle data on the server side\u2014like processing form inputs and interacting with databases\u2014is a fundamental skill.",
+            "This post will walk through the core concepts of PHP, focusing on variables, control structures (if\/else and loops), and the crucial difference between client-side (JavaScript) and server-side (PHP) execution. Getting comfortable with includes and requires (like we're using in this very blog) is key to writing clean, modular code.",
+            "By separating your logic from your presentation, you adopt an MVC-like approach, making your projects scalable and maintainable."
+        ]
+    }
+}

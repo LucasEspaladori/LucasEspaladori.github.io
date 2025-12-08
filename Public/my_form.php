@@ -46,32 +46,50 @@
                     <hr>
 
                     <div class="form-group question-block">
-                        <label><strong>1. When fixing a deeply nested bug, your first action is:</strong></label>
-                        <div class="radio-options">
-                            <input type="radio" id="q1_a" name="question1" value="1" required>
-                            <label for="q1_a">A) Immediately post the entire function on Stack Overflow. (1 point)</label><br>
-                            
-                            <input type="radio" id="q1_b" name="question1" value="3">
-                            <label for="q1_b">B) Add a million `console.log()` statements to trace variable states. (3 points)</label><br>
-                            
-                            <input type="radio" id="q1_c" name="question1" value="5">
-                            <label for="q1_c">C) Read the error message, trace the stack, and use the debugger. (5 points)</label>
-                        </div>
-                    </div>
+    <label><strong>1. When fixing a deeply nested bug, your first action is:</strong></label>
+    
+    <div class="radio-options">
+        
+        <label for="q1_a">
+            <input type="radio" id="q1_a" name="question1" value="1" required>
+            <span>A) Immediately post the entire function on Stack Overflow. (1 point)</span>
+        </label>
+        
+        <label for="q1_b">
+            <input type="radio" id="q1_b" name="question1" value="3">
+            <span>B) Add a million `console.log()` statements to trace variable states. (3 points)</span>
+        </label>
+        
+        <label for="q1_c">
+            <input type="radio" id="q1_c" name="question1" value="5">
+            <span>C) Read the error message, trace the stack, and use the debugger. (5 points)</span>
+        </label>
+        
+    </div>
+</div>
 
                     <div class="form-group question-block">
-                        <label><strong>2. Which tools are open right now (select all that apply):</strong></label>
-                        <div class="checkbox-options">
-                            <input type="checkbox" id="q2_a" name="question2[]" value="music">
-                            <label for="q2_a">Music/Podcast (Need background noise)</label><br>
-                            
-                            <input type="checkbox" id="q2_b" name="question2[]" value="social">
-                            <label for="q2_b">Social Media (Just checking *one* thing)</label><br>
-                            
-                            <input type="checkbox" id="q2_c" name="question2[]" value="docs">
-                            <label for="q2_c">Official Language Docs (RTFM is life)</label>
-                        </div>
-                    </div>
+    <label><strong>2. Which tools are open right now (select all that apply):</strong></label>
+    
+    <div class="checkbox-options">
+        
+        <label for="q2_a">
+            <input type="checkbox" id="q2_a" name="question2[]" value="music">
+            <span>Music/Podcast (Need background noise)</span>
+        </label>
+        
+        <label for="q2_b">
+            <input type="checkbox" id="q2_b" name="question2[]" value="social">
+            <span>Social Media (Just checking *one* thing)</span>
+        </label>
+        
+        <label for="q2_c">
+            <input type="checkbox" id="q2_c" name="question2[]" value="docs">
+            <span>Official Language Docs (RTFM is life)</span>
+        </label>
+        
+    </div>
+</div>
 
                     <div class="form-group question-block">
                         <label for="q3_number"><strong>3. How many times have you *actually* used a design pattern (like Singleton or Factory) this month?</strong></label>

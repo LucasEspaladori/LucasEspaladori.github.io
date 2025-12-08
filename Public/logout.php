@@ -2,9 +2,8 @@
 require_once 'config.php'; 
 session_start(); 
 
-$_SESSION = array();
-
-session_destroy();
+// Only log out of the To-do List
+unset($_SESSION['authenticated']);
 
 $BASE_PATH = ''; 
 if ($_SERVER['SERVER_NAME'] === 'localhost') {
@@ -16,7 +15,6 @@ if ($_SERVER['SERVER_NAME'] === 'localhost') {
 }
 
 $login_url = 'http://' . $_SERVER['HTTP_HOST'] . $BASE_PATH . 'login.php?logout=success';
-
 header('Location: ' . $login_url);
 exit();
 ?>

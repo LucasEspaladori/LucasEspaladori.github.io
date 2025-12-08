@@ -46,6 +46,7 @@
 
 </header>
 
+<main class="main-content">
     <main>
         <h2>A Trip to Japan</h2>
         <p>

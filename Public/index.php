@@ -26,6 +26,7 @@
 
 </header>
 
+    <main class="main-content">
         <div>
             <h2>About Lucas Espaladori</h2>
             <p>
@@ -37,24 +38,24 @@
             
             <h2>My Interests Slideshow</h2>
 
-            <div class="slideshow">
-                
-                <div class="slideshow_img">
-                    <img src="https://media.istockphoto.com/id/1306372614/photo/best-homemade-pasta-is-done.jpg?s=612x612&w=0&k=20&c=AFLGFA2bbL-9bnGvqf75iPUNtYCwSqIBG5ByAYl4RGY=" alt="Image of a chef cooking." title="Cooking">
-                </div>
-                
-                <div class="slideshow_img">
-                    <img src="https://media.istockphoto.com/id/1356364268/photo/close-up-focus-on-persons-hands-typing-on-the-desktop-computer-keyboard-screens-show-coding.jpg?s=612x612&w=0&k=20&c=4R_9mWq9KzgpC_pVBMMM0FNzw1L-NyFLa7tDqFInMGs=" alt="Image of code on a computer screen." title="Programming Languages">
-                </div>
-                
-                <div class="slideshow_img">
-                    <img src="https://media.istockphoto.com/id/1482455750/photo/gamer-playing-driving-game-with-game-controller-in-neon-game-room.jpg?s=612x612&w=0&k=20&c=Zv9I4OcZwpn6gu9LehDi29onQ87_I4_2cDciriAEkuw=" alt="Image of a racing game perspective." title="Video Games">
-                </div>
-                
-                <a class="prev" id="prev_link" onclick="previous()">&#10094; Previous</a>
-                <a class="next" id="next_link" onclick="next()">Next &#10095;</a>
 
-            </div>
+<div class="slideshow">
+    
+    <div class="slideshow-image-container">
+        
+        <button class="prev" onclick="previous()">&#10094;</button>
+        <button class="next" onclick="next()">&#10095;</button>
+
+                    <img class="slideshow_img" src="https://media.istockphoto.com/id/1306372614/photo/best-homemade-pasta-is-done.jpg?s=612x612&w=0&k=20&c=AFLGFA2bbL-9bnGvqf75iPUNtYCwSqIBG5ByAYl4RGY=" alt="Image of a chef cooking." title="Cooking">
+                
+                    <img class="slideshow_img" src="https://media.istockphoto.com/id/1356364268/photo/close-up-focus-on-persons-hands-typing-on-the-desktop-computer-keyboard-screens-show-coding.jpg?s=612x612&w=0&k=20&c=4R_9mWq9KzgpC_pVBMMM0FNzw1L-NyFLa7tDqFInMGs=" alt="Image of code on a computer screen." title="Programming Languages">
+
+                    <img class="slideshow_img" src="https://media.istockphoto.com/id/1482455750/photo/gamer-playing-driving-game-with-game-controller-in-neon-game-room.jpg?s=612x612&w=0&k=20&c=Zv9I4OcZwpn6gu9LehDi29onQ87_I4_2cDciriAEkuw=" alt="Image of a racing game perspective." title="Video Games">
+
+        </div>
+    </div>
+</div>
+
             <hr>
 
             <h2>My Interests</h2>
